@@ -15,7 +15,6 @@
 |column        |Type      |Options|
 |--------------|----------|-------|
 |name          |string    |null: false|
-|message_id    |integer   |foreign_key: true|
 
 ### Association
 -has_many :messages
