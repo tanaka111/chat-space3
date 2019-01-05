@@ -1,11 +1,9 @@
-
 ## usersテーブル
 
 |column        |Type      |Options|
 |--------------|----------|-------|
 |name          |string    |null: false|
-|group_id      |integer   |foreign_key: true|
-|e-mail        |string    |unique: true|
+
 
 ### Association
 - has_many :messages
@@ -17,8 +15,6 @@
 |column        |Type      |Options|
 |--------------|----------|-------|
 |name          |string    |null: false|
-|user_id       |integer   |foreign_key: true|
-|message_id    |integer   |foreign_key: true|
 
 ### Association
 -has_many :messages
@@ -30,6 +26,18 @@
 |--------------|----------|-------|
 |body          |text      |null: false|
 |image         |string    |null: false|
+|user_id       |integer   |foreign_key: true|
+|group_id      |integer   |foreign_key: true|
+
+### Association
+
+- belongs_to :user
+- belongs_to :group
+
+## group_userテーブル
+
+|column        |Type      |Options|
+|--------------|----------|-------|
 |user_id       |integer   |foreign_key: true|
 |group_id      |integer   |foreign_key: true|
 
