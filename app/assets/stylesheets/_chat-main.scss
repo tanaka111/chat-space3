@@ -28,14 +28,14 @@
   float: right;
   border-style: solid;
   padding: 10px 20px 10px 20px;
-  color: #38AEF0;
+  color: $light_blue;
   position: relative;
   bottom: 60px;
 }
 
  &__header--group-members {
     font-size: 12px;
-    color: #999999;
+    color: $light_gray;
 }
 
 &__groups {
@@ -48,7 +48,7 @@
 
 &-content {
   border-top: solid 1px #eeeeee;
-  color: #434A54;
+  color: $black;
   padding: 46px 40px 40px 40px;
 
 
@@ -94,7 +94,7 @@
   }
 .btn {
   background-color: #38AEF0;
-  color: white;
+  color: $white;
   font-weight: bold;
   width: 80px;
   float: right;
