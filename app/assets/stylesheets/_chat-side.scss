@@ -1,45 +1,56 @@
-$font-color: #ffffff;
 
 
 
-.chat-side {
+.side-bar {
   width: 300px;
   height: 100vh;
   float: left;
-  color: $font-color;
+  color: $white;
 
 
-  &__user {
-  background-color: #253141;
+  .header {
+  background-color: $side_blue_dark;
   padding: 35px 20px 20px 20px;
   height: 100px;
   position: fixed;
   top: 0;
   width: 260px;
 
-  &-name {
+  &__name {
   font-weight: bold;
   font-size: 16px;
   margin-right: 20px;
   float: left;
   }
-  &-detail {
-    float: right;
+  & ul {
+  float: right;
+  }
+  & .icon{
+  position: relative;
+  right: 20px;
+  }
+  & .icon2{
+  position: relative;
+  bottom: 25px;
   }
   }
 
-  &__groups {
+  .groups {
     width: 300px;
     height: 100%;
-    background-color: #2f3e51;
+    background-color: $side_blue_light;
     position: fixed;
     top: 100px;
+ }
+  .group {
+    padding: 40px 20px 0 20px;}
+  .group__name {
+    font-size: 15px;
+  }
+  .group__message {
+    font-size: 11px;
   }
 
-  &__groups-lists {
-    padding: 40px 20px 0 20px;
-
-  }
 
   &__groups-name {
     font-size: 15px;

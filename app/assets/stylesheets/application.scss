@@ -1,7 +1,10 @@
 @import "./reset";
 @import "font-awesome";
+@import "config/colors";
+@import "./flash";
 @import "chat-side";
 @import "chat-main";
+@import "user";
 
 /*
  *= require font-awesome
