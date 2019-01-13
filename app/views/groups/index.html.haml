@@ -27,37 +27,3 @@
               %i.fa.fa-picture-o
         .chat-main__form-btn
           %input{:class =>"btn", :type =>"submit", :size => "15",:value => "SEND" }
-
-
-
-/ .header
-/   .notification
-/     .side-bar
-/       .header
-/         .header__name
-/           = current_user.name
-/         %ul.header__lists
-/           %li.list
-/             =link_to new_group_path do
-/               =fa_icon "edit", class: "icon"
-/           %li.list
-/             = link_to edit_user_path(current_user) do
-/               =fa_icon "cog", class: "icon2"
-/ .chat-side
-/       .chat-side__user
-/         .chat-side__user-content
-/           .chat-side__user-name tanakanaoki
-/           .chat-side__user-detail
-/             %a.chat-side__user--new-groups
-/             =fa_icon "edit"
-/             %a.chat-side__user--edit-user
-/             =fa_icon "cog"
-/       .chat-side__groups
-/         .chat-side__groups-lists
-/           .chat-side__groups-name techA
-/           .chat-side__groups-message 初めまして
-
-/ .chat-side__groups
-/         .chat-side__groups-lists
-/           .chat-side__groups-name techA
-/           .chat-side__groups-message 初めまして
