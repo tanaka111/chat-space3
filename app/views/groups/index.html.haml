@@ -1,0 +1,29 @@
+.header
+  .notification
+    = render :partial => "devise/shared/side_bar"
+    .chat-main
+      .chat-main__header
+        .chat-main__header-clear-fixed
+          %ul
+            %li.chat-main__header--group-name techA
+            %li.chat-main__header--group-members MEMBER: a
+            %li
+              %a.chat-main__header--group-edit-btn
+                =link_to "edit","#",method: :get
+
+
+      .chat-main__groups
+        .chat-main__groups-content
+          %ul
+            %li.chat-main__groups-content-user-name tanakanaoki
+            %li.chat-main__groups-content-day 2019/01/07 03:23:12
+            %li.chat-main__groups-content-message 初めまして
+
+      .footer
+        .chat-main__form
+          / %form{:action => "", :method => ""}
+          %input{:type =>"text", :value => "type a message", :size => "50" }
+            %label.upload-label{for: "upload-icon"}
+              %i.fa.fa-picture-o
+        .chat-main__form-btn
+          %input{:class =>"btn", :type =>"submit", :size => "15",:value => "SEND" }
