@@ -84,7 +84,7 @@
 &__form {
   padding: 20px 40px;
 }
-  i {
+  .icon {
     position: relative;
     right: 40px;
   }
@@ -92,7 +92,7 @@
     width: calc(100vw - 500px);
     height: 50px;
   }
-.btn {
+.form__submit {
   background-color: #38AEF0;
   color: $white;
   font-weight: bold;

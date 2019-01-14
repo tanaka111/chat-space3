@@ -8,56 +8,19 @@
             %li.chat-main__header--group-name techA
             %li.chat-main__header--group-members MEMBER: a
             %li
-              %a.chat-main__header--group-edit-btn
-                =link_to "edit","#",method: :get
-
-
-      .chat-main__groups
-        .chat-main__groups-content
-          %ul
-            %li.chat-main__groups-content-user-name tanakanaoki
-            %li.chat-main__groups-content-day 2019/01/07 03:23:12
-            %li.chat-main__groups-content-message 初めまして
-
+              =link_to "edit","#", class: "btn"
+      .group
+        = render partial: "message", collection: @messages
       .footer
-        .chat-main__form
-          / %form{:action => "", :method => ""}
-          %input{:type =>"text", :value => "type a message", :size => "50" }
-            %label.upload-label{for: "upload-icon"}
-              %i.fa.fa-picture-o
-        .chat-main__form-btn
-          %input{:class =>"btn", :type =>"submit", :size => "15",:value => "SEND" }
+        .form
+          = form_for [@group, @message] do |f|
+            =f.text_field :content, class: "form__message",placeholder: "type a message"
+            .form__mask
+              = f.label :image, class: "form__mask__image" do
+                =fa_icon "fa-picture-o", class: "icon"
+                =f.file_field :image, class: "hidden"
+            = f.submit "Send", class: "form__submit"
 
 
 
-/ .header
-/   .notification
-/     .side-bar
-/       .header
-/         .header__name
-/           = current_user.name
-/         %ul.header__lists
-/           %li.list
-/             =link_to new_group_path do
-/               =fa_icon "edit", class: "icon"
-/           %li.list
-/             = link_to edit_user_path(current_user) do
-/               =fa_icon "cog", class: "icon2"
-/ .chat-side
-/       .chat-side__user
-/         .chat-side__user-content
-/           .chat-side__user-name tanakanaoki
-/           .chat-side__user-detail
-/             %a.chat-side__user--new-groups
-/             =fa_icon "edit"
-/             %a.chat-side__user--edit-user
-/             =fa_icon "cog"
-/       .chat-side__groups
-/         .chat-side__groups-lists
-/           .chat-side__groups-name techA
-/           .chat-side__groups-message 初めまして
-
-/ .chat-side__groups
-/         .chat-side__groups-lists
-/           .chat-side__groups-name techA
-/           .chat-side__groups-message 初めまして
+/ %a.chat-main__header--group-edit-btn =link_to "edit","#",method: :get
