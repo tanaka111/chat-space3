@@ -25,10 +25,12 @@
   & .icon{
   position: relative;
   right: 20px;
+  color: white;
   }
   & .icon2{
   position: relative;
   bottom: 25px;
+  color: white;
   }
   }
 
@@ -39,13 +41,19 @@
     position: fixed;
     top: 100px;
  }
-  .group {
-    padding: 40px 20px 0 20px;}
-  .group__name {
-    font-size: 15px;
+  .group2 {
+    padding: 20px 20px 40px 20px;
+    color: white;
   }
-  .group__message {
+  .group2__name {
+    font-size: 15px;
+    color: white;
+  }
+  .group2__message {
     font-size: 11px;
+    padding-bottom: 40px;
+    color: white;
+
   }
 
 
