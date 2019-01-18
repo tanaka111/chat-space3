@@ -36,10 +36,7 @@ $(function(){
       var html = buildHTML(data);
       $('.group').append(html);
       $('.form__message').val('')
-
-      // $("html,body").animate({scrollTop:$('group').offset()});
       $(".group").animate({scrollTop:$('.group')[0].scrollHeight}, 'fast');
-      console.log('action')
     })
     .fail(function(){
       alert('error');
@@ -48,15 +45,3 @@ $(function(){
 });
 
 
-// $('group').animate({scrollTop :$('group').get(0).scrollHeight});
-//     })
-
-// var url = $(this).attr('action')
-
-// .group
-//   .group-content
-//     %ul
-//       %li.group-content__user-name
-//         = message.user.name
-//       %li.group-content__date
-//         = message.created_at.strftime("%Y/%m/%d %H:%M")
