@@ -1,14 +1,13 @@
-.group
-  .group-content
-    %ul
-      %li.group-content__user-name
-        = message.user.name
-      %li.group-content__date
-        = message.created_at.strftime("%Y/%m/%d %H:%M")
-  .message-content
-    - if message.content.present?
-      %p.message-content__detail
-        =  message.content
-    = image_tag message.image.url, class: "mesage__image" if message.image.present?
+.group-content
+  %ul
+    %li.group-content__user-name
+      = message.user.name
+    %li.group-content__date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+.message-content
+  - if message.content.present?
+    %p.message-content__detail
+      =  message.content
+  = image_tag message.image.url, class: "mesage__image" if message.image.present?
 
 
