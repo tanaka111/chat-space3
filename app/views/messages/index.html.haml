@@ -5,10 +5,13 @@
       .chat-main__header
         .chat-main__header-clear-fixed
           %ul
-            %li.chat-main__header--group-name techA
-            %li.chat-main__header--group-members MEMBER: a
+            %li.chat-main__header--group-name
+              = @group.name
+            %li.chat-main__header--group-members
+              - @group.users.each do |group_user|
+                =group_user.name
             %li
-              =link_to "edit","#", class: "btn"
+              =link_to "edit","/groups/#{@group.id}/edit", class: "btn"
       .group
         = render partial: "message", collection: @messages
       .footer
