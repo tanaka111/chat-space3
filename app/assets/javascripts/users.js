@@ -19,7 +19,6 @@ function appendNoUser(user) {
 
   $("#user-search-field").on("keyup", function(){
     var input = $("#user-search-field").val();
-  // console.log(input)
 
   if (input.length !== 0){
     $.ajax({
@@ -36,10 +35,7 @@ function appendNoUser(user) {
           appendUser(user);
         });
       })
-      // else {
-      //   appendNoUser("該当なし");
-      //   console.log(users)
-      // }
+
 
     .fail(function(){
       alert('ユーザー検索に失敗しました');
@@ -57,15 +53,14 @@ function appendNoUser(user) {
 </div>
 </div>`
   user_add.append(html);
-  console.log(user_add);
+
     }
 
 
    $("#user-search-result").on("click",".user-search-add",function(){
        var add_id = $(this).attr("data-user-id");
        var add_name = $(this).attr("data-user-name");
-       console.log(add_id);
-       console.log(add_name);
+
        appendAdd(add_id,add_name);
        $(this).parent().remove();
 
@@ -74,7 +69,7 @@ function appendNoUser(user) {
 
    $("#add").on("click",".user-search-remove",function(){
       $(this).parent().remove();
-      console.log(this);
+
    })
 });
 
