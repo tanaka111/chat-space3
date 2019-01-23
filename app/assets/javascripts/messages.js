@@ -61,7 +61,6 @@ $(function(){
     })
 
      .done(function(data){
-        console.log(data);
           data.forEach(function(message){
             var html =buildHTML(message);
             $('.group').append(html);
