@@ -1,10 +1,10 @@
 $(function(){
   function buildHTML(message) {
     var html = `<div class="group">
-                <div class=group-content>
+                <div class=group-content data-id=${message.id}>
                 <ul>
                 <li class="group-content__user-name">
-                  ${message.name}
+                  ${message.user_name}
                 </li>
                 <li class="group-content__date"> ${message.time}
                 </li>
@@ -17,6 +17,8 @@ $(function(){
                 </div>`
     return html;
   }
+
+
 
   $('form').on('submit', function(e){
     e.preventDefault();
@@ -37,11 +39,41 @@ $(function(){
       $('.group').append(html);
       $('.form__message').val('')
       $(".group").animate({scrollTop:$('.group')[0].scrollHeight}, 'fast');
+
+
     })
     .fail(function(){
       alert('error');
     })
   });
+
+  $(function(){
+    setInterval(update, 5000);
+  });
+
+  function update(){
+    var message_id = $('.group-content:last').data('id')
+    $.ajax({
+      url: location.href,
+      type: "get",
+      data: {id: message_id},
+      dataType: 'json'
+    })
+
+     .done(function(data){
+        console.log(data);
+          data.forEach(function(message){
+            var html =buildHTML(message);
+            $('.group').append(html);
+          })
+          $('.form__message').val('')
+          $(".group").animate({scrollTop:$('.group')[0].scrollHeight}, 'fast');
+      })
+    .fail(function(){
+
+    })
+  }
+
 });
 
 
