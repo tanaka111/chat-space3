@@ -1,24 +1,27 @@
 $(function(){
   function buildHTML(message) {
+    // console.log(message.image)
+     var messageImage = (message.image) ? `<img src="${message.image}" class="message__image">` : ``
     var html = `<div class="group">
-                <div class=group-content data-id=${message.id}>
-                <ul>
-                <li class="group-content__user-name">
-                  ${message.user_name}
-                </li>
-                <li class="group-content__date"> ${message.time}
-                </li>
-                </ul>
-                </div>
-                <div class="message-content">
-                  <p class="message-content__detail"> ${message.content}
-                  </p>
+                  <div class=group-content data-id=${message.id}>
+                    <ul>
+                      <li class="group-content__user-name">
+                        ${message.user_name}
+                      </li>
+                      <li class="group-content__date"> ${message.time}
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="message-content">
+                    <p class="message-content__detail"> ${message.content}
+                    </p>
+                    ${messageImage}
                   </div>
                 </div>`
     return html;
   }
 
-
+ // = image_tag message.image.url, class: "mesage__image"
 
   $('form').on('submit', function(e){
     e.preventDefault();
@@ -35,6 +38,7 @@ $(function(){
     })
 
     .done(function(data){
+      console.log("a");
       var html = buildHTML(data);
       $('.group').append(html);
       $('.form__message').val('')
@@ -48,7 +52,7 @@ $(function(){
   });
 
   $(function(){
-    setInterval(update, 5000);
+    setInterval(update, 10000);
   });
 
   function update(){
